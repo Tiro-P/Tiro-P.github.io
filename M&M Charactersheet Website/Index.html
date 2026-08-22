@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="sheetManager.js" defer></script>
+    <title>Testing site</title>
+</head>
+
+<body>
+    <div id="sectionSeparator">
+        <H2>Character Sheet</H2>
+    </div>
+    <div id="characterinfo">
+        <div id="basicinfo">
+            <div class="inputgroup">
+                <label>Hero:</label>
+                <input type="text" placeholder="Hero Name" id="heroName">
+            </div>
+            <div id="row2">
+                <div class="inputgroup">
+                    <label>Power Level:</label>
+                    <input type="number" id="powerLevel" placeholder="PL">
+                </div>
+                <div class="inputgroup">
+                    <label>Available Power Points:</label>
+                    <div class="errorwrapper">
+                        <input type="number" id="availablePowerPoints" placeholder="" disabled>
+                        <span class="errorflag">Extremely Loud Incorrect Buzzer</span>
+                    </div>
+                </div>
+            </div>
+            <div id="pointtotals">
+                <label>Used Power Points|</label>
+                <label class="small">Abilities:</label>
+                <input id="usedAbilityPoints" class="usedPoints" disabled>
+                <label class="small">+ Powers:</label>
+                <input id="usedOffensePoints" class="usedPoints" disabled>
+                <label class="small">+ Advantages:</label>
+                <input id="UsedAdvantagePoints" class="usedPoints" disabled>
+                <label class="small">+ Skills:</label>
+                <input id="UsedSkillPoints" class="usedPoints" disabled>
+                <label class="small">+ Defenses:</label>
+                <input id="UsedDefenseStatPoints" class="usedPoints" disabled>
+                <label class="small"> = </label>
+                <input id="spentTotal" disabled>
+            </div>
+        </div>
+        <div id="abilities">
+            <div class="sectionTitle">
+                <h1>Abilities</h1>
+                <p>two power points per ability point</p>
+            </div>
+            <div class="inputgroup">
+                <label>Strength:</label>
+                <input type="number" id="strength" class="abilityscore" min="-5" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Agility:</label>
+                <input type="number" id="agility" class="abilityscore" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Fighting:</label>
+                <input type="number" id="fighting" class="abilityscore" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Awareness:</label>
+                <input type="number" id="awareness" class="abilityscore" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Stamina:</label>
+                <input type="number" id="stamina" class="abilityscore" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Dexterity:</label>
+                <input type="number" id="dexterity" class="abilityscore" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Intellect:</label>
+                <input type="number" id="intellect" class="abilityscore" placeholder="0">
+            </div>
+            <div class="inputgroup">
+                <label>Presence:</label>
+                <input type="number" id="presence" class="abilityscore" placeholder="0">
+            </div>
+        </div>
+        <div id="combat">
+            <div id="offense">
+                <div class="sectionTitle">
+                    <h1>Offense</h1>
+                    <p>One power point per rank</p>
+                </div>
+                <div id="Initiativeblock">
+                    <label>Initiative <small>(Agl + Bonuses):</small></label>
+                    <div class="inputmarker">
+                        <label>AGL</label>
+                        <input type="number" class="agilityDisplay" disabled>
+                    </div>
+                    <label>+</label>
+                    <div class="inputmarker">
+                        <label>Bonus</label>
+                        <input type="number" id="initiativeBonus" placeholder="0">
+                    </div>
+                    <label>=</label>
+                    <input type="number" id="initiative" disabled>
+                </div>
+                <div class="inputgroup">
+                    <input type="text" id="offensename1" placeholder="Name">
+                    <input type="number" id="offenserank1" placeholder="+0">
+                    <input type="text" id="offensedescription1" placeholder="Description">
+                </div>
+                <div class="inputgroup">
+                    <input type="text" id="offensename2" placeholder="Name">
+                    <input type="number" id="offenserank2" placeholder="+0">
+                    <input type="text" id="offensedescription2" placeholder="Description">
+                </div>
+                <div class="inputgroup">
+                    <input type="text" id="offensename3" placeholder="Name">
+                    <input type="number" id="offenserank3" placeholder="+0">
+                    <input type="text" id="offensedescription3" placeholder="Description">
+                </div>
+                <div class="inputgroup">
+                    <input type="text" id="offensename4" placeholder="Name">
+                    <input type="number" id="offenserank4" placeholder="+0">
+                    <input type="text" id="offensedescription4" placeholder="Description">
+                </div>
+            </div>
+            <div id="defense">
+                <div class="sectionTitle">
+                    <h1>Defense</h1>
+                    <p>one point per rank</p>
+                </div>
+                <div class="inputgroup">
+                    <label class="defname">Dodge:</label>
+                    <div class="inputmarker">
+                        <label>Total</label>
+                        <input type="number" id="dodgeTotal" disabled>
+                        <span id="dodgeToughnessError" class="errorflag">Dodge + Toughness cannot be greater than Power
+                            Level</span>
+                    </div>
+                    <label>=</label>
+                    <div class="inputmarker">
+                        <label>base</label>
+                        <input type="number" class="strengthDisplay" disabled>
+                    </div>
+                    <label>+</label>
+                    <div class="inputmarker">
+                        <label>rank</label>
+                        <input type="number" id="dodgeRank" class="defenseRank" placeholder="0">
+                    </div>
+                    <label>+</label>
+                    <div class="inputmarker">
+                        <label>enhance</label>
+                        <input type="number" id="dodgeEnhance" class="defenseEnhance" placeholder="0">
+                    </div>
+                </div>
+                <div class="inputgroup">
+                    <label class="defname">Parry:</label>
+                    <div class="errorwrapper">
+                        <input type="number" id="parryTotal" disabled>
+                        <span id="parryToughnessError" class="errorflag">Parry + Toughness cannot be greater than Power
+                            Level</span>
+                    </div>
+                    <label>=</label>
+                    <input type="number" class="fightingDisplay" disabled>
+                    <label>+</label>
+                    <input type="number" id="parryRank" class="defenseRank" placeholder="0">
+                    <label>+</label>
+                    <input type="number" id="parryEnhance" class="defenseEnhance" placeholder="0">
+                </div>
+                <div class="inputgroup">
+                    <label class="defname">Toughness:</label>
+                    <div class="errorwrapper">
+                        <input type="number" id="toughnessTotal" disabled class="TPConflict">
+                        <span id="toughnessDodgeError" class="errorflag">
+                            Dodge + Toughness cannot be greater than Power Level
+                        </span>
+                        <span id="toughnessParryError" class="errorflag">
+                            Parry+ Toughness cannot be greater than Power Level
+                        </span>
+                        <span id="tdpError" class="errorflag">
+                            Dodge + Toughness cannot be greater than Power Level<br>
+                            &nbsp;Parry + Toughness cannot be greater than Power Level
+                        </span>
+                    </div>
+                    <label>=</label>
+                    <input type="number" class="staminaDisplay" disabled>
+                    <label>+</label>
+                    <input type="number" id="toughnessRank" class="defenseRank" disabled>
+                    <label>+</label>
+                    <input type="number" id="toughnessEnhance" class="defenseEnhance" placeholder="0">
+                </div>
+                <div class="inputgroup">
+                    <label class="defname">Fortitude:</label>
+                    <div class="errorwrapper">
+                        <input type="number" id="fortitudeTotal" disabled>
+                        <span id="fortitudeWillError" class="errorflag">
+                            Fortitude + Will cannot be greater than Power Level
+                        </span>
+                    </div>
+                    <label>=</label>
+                    <input type="number" class="staminaDisplay" disabled>
+                    <label>+</label>
+                    <input type="number" id="fortitudeRank" class="defenseRank" placeholder="0">
+                    <label>+</label>
+                    <input type="number" id="fortitudeEnhance" class="defenseEnhance" placeholder="0">
+                </div>
+                <div class="inputgroup">
+                    <label class="defname">Will:</label>
+                    <div class="errorwrapper">
+                        <input type="number" id="willTotal" disabled>
+                        <span id="fortitudeWillError" class="errorflag">
+                            Fortitude + Will cannot be greater than Power Level
+                        </span>
+                    </div>
+                    <label>=</label>
+                    <input type="number" class="awarenessDisplay" disabled>
+                    <label>+</label>
+                    <input type="number" id="willRank" class="defenseRank" placeholder="0">
+                    <label>+</label>
+                    <input type="number" id="willEnhance" class="defenseEnhance" placeholder="0">
+                </div>
+            </div>
+        </div>
+        <div id="skills">
+            <div class="sectionTitle">
+                <h1>Skills</h1>
+                <p>one power point per 2 ranks | underlined skills are trained only</p>
+            </div>
+            <div id="skillList">
+                <div class="skillSplitter">
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Acrobatics</strong>:</label>
+                        <div class="inputmarker">
+                            <label>Total</label>
+                            <div class='errorwrapper'>
+                                <input type='number' id='AcrobaticsTotal' class='skillTotal' disabled>
+                                <span id='AcrobaticsError' class='errorflag'> Skill modifier totals cannot be more than
+                                    Power Level +10 </span>
+                            </div>
+                        </div>
+                        <label> =</label>
+                        <div class="inputmarker">
+                            <label>Base</label>
+                            <input type='number' class='agilityDisplay skillDisplay' id='AcrobaticsDisplay' disabled>
+                        </div>
+                        <label> +</label>
+                        <div class="inputmarker">
+                            <label>Rank</label>
+                            <input type='number' id='AcrobaticsRank' class='skillRank' placeholder='0'>
+                        </div>
+                        <label> +</label>
+                        <div class="inputmarker">
+                            <label>Enhance</label>
+                            <input type='number' id='AcrobaticsEnhance' class='skillEnhance' placeholder='0'>
+                        </div>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Athletics</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='AthleticsTotal' class='skillTotal' disabled>
+                            <span id='AthleticsError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='strengthDisplay skillDisplay' id='AthleticsDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='AthleticsRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='AthleticsEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Close Combat</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='CloseCombatTotal' class='skillTotal' disabled>
+                            <span id='CloseCombatError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='fightingDisplay skillDisplay' id='CloseCombatDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='CloseCombatRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='CloseCombatEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Deception</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='DeceptionTotal' class='skillTotal' disabled>
+                            <span id='DeceptionError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='presenceDisplay skillDisplay' id='DeceptionDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='DeceptionRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='DeceptionEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Expertise</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='ExpertiseTotal' class='skillTotal' disabled>
+                            <span id='ExpertiseError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='intellectDisplay skillDisplay' id='ExpertiseDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='ExpertiseRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='ExpertiseEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Insight</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='InsightTotal' class='skillTotal' disabled>
+                            <span id='InsightError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='awarenessDisplay skillDisplay' id='InsightDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='InsightRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='InsightEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Intimidation</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='IntimidationTotal' class='skillTotal' disabled>
+                            <span id='IntimidationError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='presenceDisplay skillDisplay' id='IntimidationDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='IntimidationRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='IntimidationEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Investigation</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='InvestigationTotal' class='skillTotal' disabled>
+                            <span id='InvestigationError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='intellectDisplay skillDisplay' id='InvestigationDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='InvestigationRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='InvestigationEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                </div>
+                <div class="skillSplitter">
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Perception</strong>:</label>
+                        <div class="inputmarker">
+                            <label>total</label>
+                            <div class='errorwrapper'>
+                                <input type='number' id='PerceptionTotal' class='skillTotal' disabled>
+                                <span id='PerceptionError' class='errorflag'> Skill modifier totals cannot be more than
+                                    Power Level +10 </span>
+                            </div>
+                        </div>
+                        <label> =</label>
+                        <div class="inputmarker">
+                            <label>Base</label>
+                            <input type='number' class='awarenessDisplay skillDisplay' id='PerceptionDisplay' disabled>
+                        </div>
+                        <label> +</label>
+                        <div class="inputmarker">
+                            <label>Rank</label>
+                            <input type='number' id='PerceptionRank' class='skillRank' placeholder='0'>
+                        </div>
+                        <label> +</label>
+                        <div class="inputmarker">
+                            <label>Enhance</label>
+                            <input type='number' id='PerceptionEnhance' class='skillEnhance' placeholder='0'>
+                        </div>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Persuasion</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='PersuasionTotal' class='skillTotal' disabled>
+                            <span id='PersuasionError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='presenceDisplay skillDisplay' id='PersuasionDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='PersuasionRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='PersuasionEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Ranged Combat</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='RangedCombatTotal' class='skillTotal' disabled>
+                            <span id='RangedCombatError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='dexterityDisplay skillDisplay' id='RangedCombatDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='RangedCombatRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='RangedCombatEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Slight of Hand</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='SlightofHandTotal' class='skillTotal' disabled>
+                            <span id='SlightofHandError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='dexterityDisplay skillDisplay' id='SlightofHandDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='SlightofHandRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='SlightofHandEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Stealth</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='StealthTotal' class='skillTotal' disabled>
+                            <span id='StealthError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='agilityDisplay skillDisplay' id='StealthDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='StealthRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='StealthEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Technology</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='TechnologyTotal' class='skillTotal' disabled>
+                            <span id='TechnologyError' class='errorflag'> Skill modifier totals cannot be more than
+                                Power Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='intellectDisplay skillDisplay' id='TechnologyDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='TechnologyRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='TechnologyEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Treatment</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='TreatmentTotal' class='skillTotal' disabled>
+                            <span id='TreatmentError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='intellectDisplay skillDisplay' id='TreatmentDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='TreatmentRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='TreatmentEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                    <div class='skillinputgroup'>
+                        <label class='skillName'> <strong>Vehicles</strong>:</label>
+                        <div class='errorwrapper'>
+                            <input type='number' id='VehiclesTotal' class='skillTotal' disabled>
+                            <span id='VehiclesError' class='errorflag'> Skill modifier totals cannot be more than Power
+                                Level +10 </span>
+                        </div>
+                        <label> =</label>
+                        <input type='number' class='dexterityDisplay skillDisplay' id='VehiclesDisplay' disabled>
+                        <label> +</label>
+                        <input type='number' id='VehiclesRank' class='skillRank' placeholder='0'>
+                        <label> +</label>
+                        <input type='number' id='VehiclesEnhance' class='skillEnhance' placeholder='0'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionSeparator">
+        <H2>Things that you can do to others</H2>
+    </div>
+    <div id="Maneuvers">
+        <button type="button" class="title">
+            <p><strong>Maneuvers</strong></p>
+            <p>alternate ways of performing actions that come with a bonus and a penalty.</p>
+        </button>
+        <div class="info">
+            <p>
+                The values listed in the table below are the maximum modifiers. Lower modifiers can be used as long as
+                the
+                bonus and penalty stay equal.<br>
+                Maneuvers cannot be done if they would reduce the penalized modifier below +0 OR increase the modifier
+                gaining the bonus to more than twice it's original value.
+            </p>
+            <table>
+                <tr>
+                    <th>Maneuver</th>
+                    <th>Bonus</th>
+                    <th>Penalty</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Accurate Attack</td>
+                    <td>+2 to hit</td>
+                    <td>-2 to effect</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>All Out Attack</td>
+                    <td>+2 to effect</td>
+                    <td>-2 to defense</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Defensive Attack</td>
+                    <td>+2 to defense</td>
+                    <td>-2 to hit</td>
+                    <td>cannot be used with the defense action</td>
+                </tr>
+                <tr>
+                    <td>Power Attack</td>
+                    <td>+2 to effect</td>
+                    <td>-2 to hit</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Slam Attack</td>
+                    <td>Damage = speed/damage +1 circumstance bonus (+2 at full speed)</td>
+                    <td>Must roll TGH against half the damage dealt</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td id="FinishingBlow">Finishing Blow</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>Auto hit OR attack vs a DC of 10 and auto crit on success</td>
+                </tr>
+                <tr>
+                    <td>Team Up Attack</td>
+                    <td>Combine multiple attackers to overwhelm an opponent</td>
+                    <td>All involved characters must delay to the same turn <br> All attacks must be within 5 ranks of
+                        each
+                        other and resisted with the same effect.</td>
+                    <td>
+                        each attacker makes an attack against the defense, The largest effect rank gets a +2
+                        circumstance
+                        bonus to rank on 1 DoS or +5 on 3 &ge; DoS
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="sectionSeparator">
+        <H2>Things that can be done to you</H2>
+    </div>
+    <div id="Conditions">
+        <button type="button" class="title">
+            <p><strong>Basic Conditions</strong></p>
+            <p>single game modifiers</p>
+        </button>
+        <div class="info">
+            <p>
+                These are the basic building blocks of conditions.
+            </p>
+            <ul>
+                <li><strong>Compelled:</strong> limited to free actions and one standard action per turn, chosen by
+                    another, controlling character. superseded by Controlled.</li>
+                <li><strong>Controlled:</strong> The character's actions each turn are dictated by another, controlling
+                    character</li>
+                <li><strong>Dazed:</strong> limited to free actions and a single standard action, that action may be
+                    used
+                    to move as usual. Superseded by Stunned</li>
+                <li><strong>Debilitated:</strong> happens when a character has one or more abilities lowered below -5.
+                    see the debilitated table below</li>
+                <li><strong>Defenseless:</strong> Active defense of 0. allows for the Finishing Blow <a
+                        href="#Maneuvers">maneuver</a></li>
+                <li><strong>Disabled:</strong> -5 circumstance penalty on checks. If the penalty is for a specific check
+                    it is added to the name. Superseded by Debilitated if it applies to the same ability</li>
+                <li><strong>Fatigued:</strong> same as hindered, but characters recover after an hour of rest</li>
+                <li><strong>Hindered:</strong> -1 speed rank (move at half speed). superseded by Immobile</li>
+                <li><strong>Immobile:</strong> no movement speed and cannot move from the spot they occupy. Immobile
+                    does not affect their ability to take actions</li>
+                <li><strong>Impaired:</strong> -2 circumstance penalty on checks. If the penalty is for a specific check
+                    it is added to the name superseded by Disabled</li>
+                <li><strong>Normal:</strong> The character is unaffected by other conditions at this time, acting
+                    normally</li>
+                <li><strong>Stunned:</strong> Cannot take any actions, even free actions</li>
+                <li><strong>Transformed:</strong> Some or all traits altered by an outside agency. Effects can vary
+                    greatly however the character's character point total does not increase.</li>
+                <li><strong>Unaware:</strong> Unable to make interaction or Perception checks or any action based on
+                    them. If the penalty is for a specific check it is added to the name others have full concealment
+                    from all of a character's unaware senses</li>
+                <li><strong>Vulnerable:</strong> Active defenses are halved (rounding up). Superseded by Defenseless
+                </li>
+                <li><strong>Weakened:</strong> Temporary loss of character points in a trait. Superseded by Debilitated
+                </li>
+            </ul>
+            <h3>Debilitated</h3>
+            <p>Debilitated is the lowest that ability ranks can get, once debilitated they cannot lower any
+                further</p>
+            <table>
+                <tr>
+                    <th>Ability below -5</th>
+                    <th>Effect</th>
+                </tr>
+                <tr>
+                    <td>Strength, Agility, or Dexterity</td>
+                    <td>Target is Defenseless, Immobilized, and Stunned</td>
+                </tr>
+                <tr>
+                    <td>Stamina</td>
+                    <td>Target is dying and has a -5 to Fortitude checks to avoid death</td>
+                </tr>
+                <tr>
+                    <td>Fighting</td>
+                    <td>Target is Dazed, Defenseless, and cannot make close attacks </td>
+                </tr>
+                <tr>
+                    <td>Intellect, Awareness, or Presence</td>
+                    <td>Target is Unaware and remains as such until restored to at least a -5 rank</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="Combined Conditions">
+        <button type="button" class="title">
+            <p><strong>Combined Conditions</strong></p>
+            <p>Short-hand Groups of Conditions</p>
+        </button>
+        <div class="info">
+            <p>
+                Combined conditions are, as the name implies, several basic conditions bundled under a single descriptor
+                <br>
+                The individual conditions that make up a combined condition can be removed or superseded with
+                individually.
+            <ul>
+                <li><strong>Asleep:</strong> Defenseless, Stunned, and Unaware. <br> removed by a hearing perception
+                    check over 3 DoS, any sudden movement, or any effect that allows a resistance check.</li>
+                <li><strong>Blind:</strong> Hindered, Visually Unaware, and Vulnerable. Also may be Impaired or Disabled
+                    for activities involving vision</li>
+                <li><strong>Bound:</strong> Defenseless, Immobile, and Impaired</li>
+                <li><strong>Deaf:</strong> Allows for Surprise Attacks, interaction is limited to sign-language and
+                    lip-reading</li>
+                <li><strong>Dying:</strong> Incapacitated and near death. When this condition is gained make a DC 15
+                    Fort check. 1 DoS nothing happens, 2 Dos character stabilizes, Fail character remains dying. 3 total
+                    DoF means death. Make fortitude checks until dead or stabilized </li>
+                <li><strong>Entranced:</strong>Stunned, can only pay attention to the entrancing effect. <br> removed by
+                    any obvious threat, or ally interaction check of DC 10 + effect rank</li>
+                <li><strong>Exhausted:</strong> Impaired and Hindered. <br> recover after an hour of rest in comfort
+                </li>
+                <li><strong>Incapacitated:</strong> Defenseless, Stunned, and Unaware. Also fall Prone unless there is
+                    outside support</li>
+                <li><strong>Paralyzed:</strong> Defenseless, Immobile, Physically Stunned. unable to move by still aware
+                    and able to do purely mental actions</li>
+                <li><strong>Prone:</strong> Hindered. -5 circumstance penalty on close attack checks. Opponents gain a
+                    +5 bonus to close attack checks but a -5 penalty to ranged attacks</li>
+                <li><strong>Restrained:</strong> Hindered and Vulnerable. If the restraints are anchored to a immovable
+                    object or character you are Immobile instead of Hindered</li>
+                <li><strong>Staggered:</strong> Dazed and Hindered</li>
+                <li><strong>Suprised:</strong> Stunned and Vulnerable</li>
+            </ul>
+
+        </div>
+    </div>
+    <div id="Example">
+        <button type="button" class="title">
+            <p><strong>Example</strong></p>
+            <p>Example for copy and paste</p>
+        </button>
+        <div class="info">
+            <p>
+                This is where the description or extra notes go
+            </p>
+            <table>
+                <tr>
+                    <th>Column 1 Title</th>
+                    <th>Column 2 Title</th>
+                </tr>
+                <tr>
+                    <td>Column 1 Name</td>
+                    <td>Column 2 Information</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>
