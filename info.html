@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/script.js" defer></script>
+    <title>M&M Info</title>
+
+</head>
+
+<body>
+    <div id="sectionSeparator">
+        <H2>Things that you can do to others</H2>
+    </div>
+    <div id="Maneuvers">
+        <button type="button" class="title">
+            <p><strong>Maneuvers</strong></p>
+            <p>alternate ways of performing actions that come with a bonus and a penalty.</p>
+        </button>
+        <div class="info">
+            <p>
+                The values listed in the table below are the maximum modifiers. Lower modifiers can be used as long as
+                the
+                bonus and penalty stay equal.<br>
+                Maneuvers cannot be done if they would reduce the penalized modifier below +0 OR increase the modifier
+                gaining the bonus to more than twice it's original value.
+            </p>
+            <table>
+                <tr>
+                    <th>Maneuver</th>
+                    <th>Bonus</th>
+                    <th>Penalty</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Accurate Attack</td>
+                    <td>+2 to hit</td>
+                    <td>-2 to effect</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>All Out Attack</td>
+                    <td>+2 to effect</td>
+                    <td>-2 to defense</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Defensive Attack</td>
+                    <td>+2 to defense</td>
+                    <td>-2 to hit</td>
+                    <td>cannot be used with the defense action</td>
+                </tr>
+                <tr>
+                    <td>Power Attack</td>
+                    <td>+2 to effect</td>
+                    <td>-2 to hit</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Slam Attack</td>
+                    <td>Damage = speed/damage +1 circumstance bonus (+2 at full speed)</td>
+                    <td>Must roll TGH against half the damage dealt</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td id="FinishingBlow">Finishing Blow</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>Auto hit OR attack vs a DC of 10 and auto crit on success</td>
+                </tr>
+                <tr>
+                    <td>Team Up Attack</td>
+                    <td>Combine multiple attackers to overwhelm an opponent</td>
+                    <td>All involved characters must delay to the same turn <br> All attacks must be within 5 ranks of
+                        each
+                        other and resisted with the same effect.</td>
+                    <td>
+                        each attacker makes an attack against the defense, The largest effect rank gets a +2
+                        circumstance
+                        bonus to rank on 1 DoS or +5 on 3 &ge; DoS
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="sectionSeparator">
+        <H2>Things that can be done to you</H2>
+    </div>
+    <div id="Conditions">
+        <button type="button" class="title">
+            <p><strong>Basic Conditions</strong></p>
+            <p>single game modifiers</p>
+        </button>
+        <div class="info">
+            <p>
+                These are the basic building blocks of conditions.
+            </p>
+            <ul>
+                <li><strong>Compelled:</strong> limited to free actions and one standard action per turn, chosen by
+                    another, controlling character. superseded by Controlled.</li>
+                <li><strong>Controlled:</strong> The character's actions each turn are dictated by another, controlling
+                    character</li>
+                <li><strong>Dazed:</strong> limited to free actions and a single standard action, that action may be
+                    used
+                    to move as usual. Superseded by Stunned</li>
+                <li><strong>Debilitated:</strong> happens when a character has one or more abilities lowered below -5.
+                    see the debilitated table below</li>
+                <li><strong>Defenseless:</strong> Active defense of 0. allows for the Finishing Blow <a
+                        href="#Maneuvers">maneuver</a></li>
+                <li><strong>Disabled:</strong> -5 circumstance penalty on checks. If the penalty is for a specific check
+                    it is added to the name. Superseded by Debilitated if it applies to the same ability</li>
+                <li><strong>Fatigued:</strong> same as hindered, but characters recover after an hour of rest</li>
+                <li><strong>Hindered:</strong> -1 speed rank (move at half speed). superseded by Immobile</li>
+                <li><strong>Immobile:</strong> no movement speed and cannot move from the spot they occupy. Immobile
+                    does not affect their ability to take actions</li>
+                <li><strong>Impaired:</strong> -2 circumstance penalty on checks. If the penalty is for a specific check
+                    it is added to the name superseded by Disabled</li>
+                <li><strong>Normal:</strong> The character is unaffected by other conditions at this time, acting
+                    normally</li>
+                <li><strong>Stunned:</strong> Cannot take any actions, even free actions</li>
+                <li><strong>Transformed:</strong> Some or all traits altered by an outside agency. Effects can vary
+                    greatly however the character's character point total does not increase.</li>
+                <li><strong>Unaware:</strong> Unable to make interaction or Perception checks or any action based on
+                    them. If the penalty is for a specific check it is added to the name others have full concealment
+                    from all of a character's unaware senses</li>
+                <li><strong>Vulnerable:</strong> Active defenses are halved (rounding up). Superseded by Defenseless
+                </li>
+                <li><strong>Weakened:</strong> Temporary loss of character points in a trait. Superseded by Debilitated
+                </li>
+            </ul>
+            <h3>Debilitated</h3>
+            <p>Debilitated is the lowest that ability ranks can get, once debilitated they cannot lower any
+                further</p>
+            <table>
+                <tr>
+                    <th>Ability below -5</th>
+                    <th>Effect</th>
+                </tr>
+                <tr>
+                    <td>Strength, Agility, or Dexterity</td>
+                    <td>Target is Defenseless, Immobilized, and Stunned</td>
+                </tr>
+                <tr>
+                    <td>Stamina</td>
+                    <td>Target is dying and has a -5 to Fortitude checks to avoid death</td>
+                </tr>
+                <tr>
+                    <td>Fighting</td>
+                    <td>Target is Dazed, Defenseless, and cannot make close attacks </td>
+                </tr>
+                <tr>
+                    <td>Intellect, Awareness, or Presence</td>
+                    <td>Target is Unaware and remains as such until restored to at least a -5 rank</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="Combined Conditions">
+        <button type="button" class="title">
+            <p><strong>Combined Conditions</strong></p>
+            <p>Short-hand Groups of Conditions</p>
+        </button>
+        <div class="info">
+            <p>
+                Combined conditions are, as the name implies, several basic conditions bundled under a single descriptor
+                <br>
+                The individual conditions that make up a combined condition can be removed or superseded with
+                individually.
+            <ul>
+                <li><strong>Asleep:</strong> Defenseless, Stunned, and Unaware. <br> removed by a hearing perception
+                    check over 3 DoS, any sudden movement, or any effect that allows a resistance check.</li>
+                <li><strong>Blind:</strong> Hindered, Visually Unaware, and Vulnerable. Also may be Impaired or Disabled
+                    for activities involving vision</li>
+                <li><strong>Bound:</strong> Defenseless, Immobile, and Impaired</li>
+                <li><strong>Deaf:</strong> Allows for Surprise Attacks, interaction is limited to sign-language and
+                    lip-reading</li>
+                <li><strong>Dying:</strong> Incapacitated and near death. When this condition is gained make a DC 15
+                    Fort check. 1 DoS nothing happens, 2 Dos character stabilizes, Fail character remains dying. 3 total
+                    DoF means death. Make fortitude checks until dead or stabilized </li>
+                <li><strong>Entranced:</strong>Stunned, can only pay attention to the entrancing effect. <br> removed by
+                    any obvious threat, or ally interaction check of DC 10 + effect rank</li>
+                <li><strong>Exhausted:</strong> Impaired and Hindered. <br> recover after an hour of rest in comfort
+                </li>
+                <li><strong>Incapacitated:</strong> Defenseless, Stunned, and Unaware. Also fall Prone unless there is
+                    outside support</li>
+                <li><strong>Paralyzed:</strong> Defenseless, Immobile, Physically Stunned. unable to move by still aware
+                    and able to do purely mental actions</li>
+                <li><strong>Prone:</strong> Hindered. -5 circumstance penalty on close attack checks. Opponents gain a
+                    +5 bonus to close attack checks but a -5 penalty to ranged attacks</li>
+                <li><strong>Restrained:</strong> Hindered and Vulnerable. If the restraints are anchored to a immovable
+                    object or character you are Immobile instead of Hindered</li>
+                <li><strong>Staggered:</strong> Dazed and Hindered</li>
+                <li><strong>Suprised:</strong> Stunned and Vulnerable</li>
+            </ul>
+
+        </div>
+    </div>
+    <div id="Example">
+        <button type="button" class="title">
+            <p><strong>Example</strong></p>
+            <p>Example for copy and paste</p>
+        </button>
+        <div class="info">
+            <p>
+                This is where the description or extra notes go
+            </p>
+            <table>
+                <tr>
+                    <th>Column 1 Title</th>
+                    <th>Column 2 Title</th>
+                </tr>
+                <tr>
+                    <td>Column 1 Name</td>
+                    <td>Column 2 Information</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>

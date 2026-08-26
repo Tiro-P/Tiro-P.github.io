@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="CSS/style.css">
     <script src="JS/script.js" defer></script>
     <script src="JS/sheetManager.js" defer></script>
+    <script src="JS/powerCreator.js" defer></script>
     <title>M&M SmartSheet</title>
 </head>
 
 <body>
-    <div id="sectionSeparator">
+    <div id="Header">
+        <div class="menu">
+            <button type="button" id="hamburger">&#9776;</button>
+            <div id="menu" class="">
+                <a href="info.html">Combat</a>
+                <a href="powers.html">Powers</a>
+            </div>
+        </div>
         <H2>Character Sheet</H2>
-        <a href="https://tiro-p.github.io/Materials/Mutants%20&%20Masterminds%203%20-%20Heros%20Handbook%20Deluxe.pdf#page=35" target="_blank">Tester</a>
     </div>
     <div id="characterinfo">
         <div id="basicinfo">
@@ -486,6 +493,224 @@
                 </div>
             </div>
         </div>
+
+        <div id="PowersAndDevices">
+            <div class="sectionTitle">
+                <H1>Powers & Devices</H1>
+                <p>Power cost = ((Base Effect + Extras - Flaws)x Rank) + flat modifiers</p>
+            </div>
+            <div id="" class="Power">
+            <p>
+            </div>
+            <button id="addPower">Add Power</button>
+            <div id="powerCreator" class="active">
+                <div id="powerCreatorHeader">
+                    <div class="sectionTitle">
+                        <h1>Power Creator</h1>
+                    </div>
+                    <button id="powerCreatorExitButton">X</button>
+                </div>
+                <div id="powerinfoWrapper">
+                    <input type="text" placeholder="Power Name">
+                    <div class="inputmarker">
+                        <label>Ranks</label>
+                        <input type="number" placeholder="0">
+                    </div>
+                    <div class="inputmarker">
+                        <label> cost </label>
+                        <input type="number" disabled>
+                    </div>
+                </div>
+                <div class="effectWrapper">
+                    <div class="radiowrapper">
+                        <H4>Effect Type:</H4>
+                        <div class="radiogroup">
+                            <input type="radio" name="effectType" value="Attack" id="Attack" class="effectType"
+                                data-group="attackEffects">
+                            <label for="Attack">Attack</label>
+                            <input type="radio" name="effectType" value="Defense" id="Defense" class="effectType"
+                                data-group="defenseEffects">
+                            <label for="Defense">Defense</label>
+                            <input type="radio" name="effectType" value="Control" id="Control" class="effectType"
+                                data-group="controlEffects">
+                            <label for="Control">Control</label>
+                            <input type="radio" name="effectType" value="Movement" id="Movement" class="effectType"
+                                data-group="movementEffects">
+                            <label for="Movement">Movement</label>
+                            <input type="radio" name="effectType" value="Sensory" id="Sensory" class="effectType"
+                                data-group="sensoryEffects">
+                            <label for="Sensory">Sensory</label>
+                            <input type="radio" name="effectType" value="General" id="General" class="effectType"
+                                data-group="generalEffects">
+                            <label for="General">General</label>
+                        </div>
+                    </div>
+                    <div id="attackEffects" class="effectGroup radiowrapper">
+                        <div class="radiogroup">
+                            <input type='radio' name='effect' value='Affliction' id='Affliction'>
+                            <label for='Affliction'>Affliction</label>
+                            <input type='radio' name='effect' value='Damage' id='Damage'>
+                            <label for='Damage'>Damage</label>
+                            <input type='radio' name='effect' value='Nullify' id='Nullify'>
+                            <label for='Nullify'>Nullify</label>
+                            <input type='radio' name='effect' value='Weaken' id='Weaken'>
+                            <label for='Weaken'>Weaken</label>
+                        </div>
+                    </div>
+                    <div id="defenseEffects" class="effectGroup radiowrapper">
+                        <div class="radiogroup">
+                            <input type='radio' name='effect' value='Deflect' id='Deflect'>
+                            <label for='Deflect'>Deflect</label>
+                            <input type='radio' name='effect' value='Immunity' id='Immunity'>
+                            <label for='Immunity'>Immunity</label>
+                            <input type='radio' name='effect' value='Protection' id='Protection'>
+                            <label for='Protection'>Protection</label>
+                            <input type='radio' name='effect' value='Regeneration' id='Regeneration'>
+                            <label for='Regeneration'>Regeneration</label>
+                            <input type='radio' name='effect' value='Immortality' id='Immortality'>
+                            <label for='Immortality'>Immortality</label>
+                        </div>
+                    </div>
+                    <div id="controlEffects" class="effectGroup radiowrapper">
+                        <div class="radiogroup">
+                            <input type='radio' name='effect' value='Environment' id='Environment'>
+                            <label for='Environment'>Environment</label>
+                            <input type='radio' name='effect' value='Illusion' id='Illusion'>
+                            <label for='Illusion'>Illusion</label>
+                            <input type='radio' name='effect' value='Create' id='Create'>
+                            <label for='Create'>Create</label>
+                            <input type='radio' name='effect' value='Move Object' id='Move Object'>
+                            <label for='Move Object'>Move Object</label>
+                            <input type='radio' name='effect' value='Summon' id='Summon'>
+                            <label for='Summon'>Summon</label>
+                            <input type='radio' name='effect' value='Transform' id='Transform'>
+                            <label for='Transform'>Transform</label>
+                            <input type='radio' name='effect' value='Luck Control' id='Luck Control'>
+                            <label for='Luck Control'>Luck Control</label>
+                        </div>
+                    </div>
+                    <div id="movementEffects" class="effectGroup radiowrapper">
+                        <div class="radiogroup">
+                            <input type='radio' name='effect' value='Burrowing' id='Burrowing'>
+                            <label for='Burrowing'>Burrowing</label>
+                            <input type='radio' name='effect' value='Leaping' id='Leaping'>
+                            <label for='Leaping'>Leaping</label>
+                            <input type='radio' name='effect' value='Speed' id='Speed'>
+                            <label for='Speed'>Speed</label>
+                            <input type='radio' name='effect' value='Swimming' id='Swimming'>
+                            <label for='Swimming'>Swimming</label>
+                            <input type='radio' name='effect' value='Flight' id='Flight'>
+                            <label for='Flight'>Flight</label>
+                            <input type='radio' name='effect' value='Movement' id='Movement'>
+                            <label for='Movement'>Movement</label>
+                            <input type='radio' name='effect' value='Teleport' id='Teleport'>
+                            <label for='Teleport'>Teleport</label>
+                        </div>
+                    </div>
+                    <div id="sensoryEffects" class="effectGroup radiowrapper">
+                        <div class="radiogroup">
+                            <input type='radio' name='effect' value='Senses' id='Senses'>
+                            <label for='Senses'>Senses</label>
+                            <input type='radio' name='effect' value='Remote Sensing' id='Remote Sensing'>
+                            <label for='Remote Sensing'>Remote Sensing</label>
+                            <input type='radio' name='effect' value='Comprehend' id='Comprehend'>
+                            <label for='Comprehend'>Comprehend</label>
+                            <input type='radio' name='effect' value='Concealment' id='Concealment'>
+                            <label for='Concealment'>Concealment</label>
+                            <input type='radio' name='effect' value='Mind Reading' id='Mind Reading'>
+                            <label for='Mind Reading'>Mind Reading</label>
+                            <input type='radio' name='effect' value='Communication' id='Communication'>
+                            <label for='Communication'>Communication</label>
+                        </div>
+                    </div>
+                    <div id="generalEffects" class="effectGroup radiowrapper">
+                        <div class="radiogroup">
+                            <input type='radio' name='effect' value='Elongation' id='Elongation'>
+                            <label for='Elongation'>Elongation</label>
+                            <input type='radio' name='effect' value='Extra Limbs' id='Extra Limbs'>
+                            <label for='Extra Limbs'>Extra Limbs</label>
+                            <input type='radio' name='effect' value='Feature' id='Feature'>
+                            <label for='Feature'>Feature</label>
+                            <input type='radio' name='effect' value='Quickness' id='Quickness'>
+                            <label for='Quickness'>Quickness</label>
+                            <input type='radio' name='effect' value='Growth' id='Growth'>
+                            <label for='Growth'>Growth</label>
+                            <input type='radio' name='effect' value='Healing' id='Healing'>
+                            <label for='Healing'>Healing</label>
+                            <input type='radio' name='effect' value='Shrinking' id='Shrinking'>
+                            <label for='Shrinking'>Shrinking</label>
+                            <input type='radio' name='effect' value='Insubstantial' id='Insubstantial'>
+                            <label for='Insubstantial'>Insubstantial</label>
+                            <input type='radio' name='effect' value='Morph' id='Morph'>
+                            <label for='Morph'>Morph</label>
+                            <input type='radio' name='effect' value='Variable' id='Variable'>
+                            <label for='Variable'>Variable</label>
+                            <input type='radio' name='effect' value='Enhanced Trait' id='Enhanced Trait'>
+                            <label for='Enhanced Trait'>Enhanced Trait</label>
+                        </div>
+                    </div>
+                    <div id="effectDescriptions">
+                        <div id="AfflictionDescription" class="effectDescription">
+                            <div class="descriptionHeader">
+                                <p><strong>Action:</strong> Standard</p>
+                                <p><strong>Range:</strong> Close </p>
+                                <p><strong>Duration:</strong> Instant </p>
+                                <p><strong>Cost:</strong> <input type="number" id="afflictionCost" value="1" disabled> /
+                                    rank</p>
+                            </div>
+                            <h4>Affliction is used to apply debilitating conditions to the target. </h4>
+                            <p>Affliction Resistance Checks are Fortitude or Will against the Affliction Rank + 10 and
+                                effects are applied based on the degree of failure on the save <br>
+                                The target of an Affliction makes a resistance check at the end of each of their turns to
+                                remove first and second degree conditions. Third degree conditions require a minute of
+                                recovery time or outside aid, such as the Treatment skill or Healing effect (DC 10 +
+                                rank).
+                            </p>
+                            <div id="afflictionConditions">
+                                <div class="inputgroup">
+                                    <label>1 Degree of Failure</label>
+                                    <select name="afflictionConditions1" id="afflictionConditions1">
+                                        <option value="Dazed">Dazed</option>
+                                        <option value="Entranced">Entranced</option>
+                                        <option value="Fatigued">Fatigued</option>
+                                        <option value="Hindered">Hindered</option>
+                                        <option value="Impaired">Impaired</option>
+                                        <option value="Vulnerable">Vulnerable</option>
+                                    </select>
+                                </div>
+                                <div class="inputgroup">
+                                    <label>2 Degrees of Failure</label>
+                                    <select name="afflictionConditions2" id="afflictionConditions2">
+                                        <option value="Compelled">Compelled</option>
+                                        <option value="Defenseless">Defenseless</option>
+                                        <option value="Disabled">Disabled</option>
+                                        <option value="Exhausted">Exhausted</option>
+                                        <option value="Immobile">Immobile</option>
+                                        <option value="Prone">Prone</option>
+                                        <option value="Stunned">Stunned</option>
+                                    </select>
+                                </div>
+                                <div class="inputgroup">
+                                    <label>3 Degrees of Failure</label>
+                                    <select name="afflictionConditions3" id="afflictionConditions3">
+                                        <option value="Asleep">Asleep</option>
+                                        <option value="Controlled">Controlled</option>
+                                        <option value="Incapacitated">Incapacitated</option>
+                                        <option value="Paralyzed">Paralyzed</option>
+                                        <option value="Transformed">Transformed</option>
+                                        <option value="Unaware">Unaware</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="advantages">
+            <div></div>
+        </div>
     </div>
     <div id="sectionSeparator">
         <H2>Things that you can do to others</H2>
@@ -696,5 +921,77 @@
         </div>
     </div>
 </body>
+<datalist id="effectTypes">
+    <option value="Attack">Attack</option>
+    <option value="Defense">Defense</option>
+    <option value="Control">Control</option>
+    <option value="Movement">Movement</option>
+    <option value="Sensory">Sensory</option>
+    <option value="General">General</option>
+
+</datalist>
+<datalist id="Effects">
+    <option value='Affliction'>
+    <option value='Alternate Form'>
+    <option value='Blast'>
+    <option value='Burrowing'>
+    <option value='Communication'>
+    <option value='Comprehend'>
+    <option value='Concealment'>
+    <option value='Create'>
+    <option value='Damage'>
+    <option value='Dazzle'>
+    <option value='Deflect'>
+    <option value='Duplication'>
+    <option value='Element Control'>
+    <option value='Elongation'>
+    <option value='Energy Absorption'>
+    <option value='Energy Aura'>
+    <option value='Energy Control'>
+    <option value='Enhanced Trait'>
+    <option value='Environment'>
+    <option value='Extra Limbs'>
+    <option value='Feature'>
+    <option value='Flight'>
+    <option value='Force Field'>
+    <option value='Growth'>
+    <option value='Healing'>
+    <option value='Illusion'>
+    <option value='Immortality'>
+    <option value='Immunity'>
+    <option value='Insubstantial'>
+    <option value='Invisibility'>
+    <option value='Leaping'>
+    <option value='Luck Control'>
+    <option value='Magic'>
+    <option value='Mental Blast'>
+    <option value='Mimic'>
+    <option value='Mind Control'>
+    <option value='Mind Reading'>
+    <option value='Morph'>
+    <option value='Move Object'>
+    <option value='Movement'>
+    <option value='Nullify'>
+    <option value='Power-Lifting'>
+    <option value='Protection'>
+    <option value='Quickness'>
+    <option value='Regeneration'>
+    <option value='Remote Sensing'>
+    <option value='Senses'>
+    <option value='Shapeshift'>
+    <option value='Shrinking'>
+    <option value='Sleep'>
+    <option value='Snare'>
+    <option value='Speed'>
+    <option value='Strike'>
+    <option value='Suffocation'>
+    <option value='Summon'>
+    <option value='Super-Speed'>
+    <option value='Swimming'>
+    <option value='Teleport'>
+    <option value='Transform'>
+    <option value='Variable'>
+    <option value='Weaken'>
+</datalist>
 
 </html>

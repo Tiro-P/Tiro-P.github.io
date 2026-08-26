@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/powers.css">
+    <script src="JS/script.js" defer></script>
+    <title>Powers</title>
+
+</head>
+
+<body>
+    <h1 data-heading="Powers" dir="auto">Powers</h1>
+    <p dir="auto">Powers are where you define what your character can do. If you want telepathy, super strength,
+        summoning, flight, or almost anything you can think of, powers are what you need. Every power is composed of
+        <strong>Effects</strong> that may be modified with various extras or flaws. The effects are quite general, so
+        many different super human abilities can fall under the same effect. For instance, attacking with claws, a long
+        range beam of ice, or an AoE cloud of fire, all fall under the Damage effect. The difference between them is the
+        way they are described as well as the different <strong>Extras</strong> and <strong>Flaws</strong> that are
+        applied to the Effect.
+    </p>
+    <h2 data-heading="Types of Effects" dir="auto">Types of Effects</h2>
+    <p dir="auto">Effects are divided into 6 different categories. Attack, Defense, Control, Movement, Sensory, and
+        General. Effects of the same type follow similar rules and do similar things.</p>
+    <div class="two-col">
+        <div>
+            <h3 data-heading="Attack" dir="auto">Attack</h3>
+            <p dir="auto"><strong>Attack</strong> effects are, as the name implies, effects that are used offensively
+                and
+                damage, hinder, or harm the target. The four attack effects are Affliction, Damage Nullify, and Weaken.
+                They
+                all
+                require a standard action and an attack check to use, and they are always rolled against a resistance
+                check
+                by their target.</p>
+        </div>
+        <div>
+            <h3 data-heading="Defense" dir="auto">Defense</h3>
+            <p dir="auto"><strong>Defense</strong> effects all work to protect in different ways, granting bonuses to
+                resistance
+                checks or immunity to specific effects or conditions. The five defense effects are Deflect, Immunity,
+                Protection, Regeneration, and Immortality. Most defense effects work only on the user and are subtle and
+                permanent, functioning at all times. Some are activated and sustained as a free action, meaning they can
+                switch
+                on or off, but can potentially leave the user unprotected.</p>
+        </div>
+        <div>
+            <h3 data-heading="Control" dir="auto">Control</h3>
+            <p dir="auto"><strong>Control</strong> effects allow the user to move, create, or change a variety of
+                different
+                things. The seven control effects are Environment, Illusion, Create, Move Object, Summon, Transform, and
+                Luck
+                Control. Most take a standard action to initiate and can be sustained. Control effects and the hazards
+                they
+                can
+                cause usually require an attack check and allow for a resistance check when used on an unwilling target.
+            </p>
+        </div>
+        <div>
+            <h3 data-heading="Movement" dir="auto">Movement</h3>
+            <p dir="auto"><strong>Movement</strong> effects enhance existing methods of movement or provide different
+                ways
+                for
+                their users to get around. The seven movement effects are Burrowing, Leaping, Speed, Swimming, Flight,
+                Movement,
+                and Teleport. Most of them are labeled as a free action but only work to modify a move action.</p>
+        </div>
+        <div>
+            <h3 data-heading="Sensory" dir="auto">Sensory</h3>
+            <p dir="auto"><strong>Sensory</strong> effects enhance or alter the senses. the six sensory effects are
+                Senses
+                (a
+                large umbrella effect), Remote Sensing, Comprehend, Concealment, Mind Reading, and Communication. They
+                are
+                typically a free action to use, or permanent.<br>
+                The basic senses types referred to in Sensory effects are Visual, Auditory, Olfactory, Tactile, and
+                Mental.
+                There are other special types such as magnetism, cosmic, magic, or radio which are less common.<br>
+                You may notice the language of some effects refer to a single sense or to a sense type, senses are
+                things
+                like
+                x-ray vision or night vision, and both these examples would fall under the sense type of vision.</p>
+        </div>
+        <div>
+            <h3 data-heading="General" dir="auto">General</h3>
+            <p dir="auto"><strong>General</strong> effects is a catch all category for effects that dont fit in to the
+                other
+                groups and as such, the largest. There are eleven general effects: Elongation, Extra Limbs, Feature,
+                Quickness,
+                Growth, Healing, Shrinking, Insubstantial, Morph, Variable, and Enhanced Trait. There aren’t any
+                overarching rules for the General category</p>
+        </div>
+    </div>
+    <h2 data-heading="Additional Effect Info" dir="auto">Additional Effect Info</h2>
+    <h3 data-heading="Effect Checks" dir="auto">Effect Checks</h3>
+    <p dir="auto">Effect checks are occasionally required to determine how well the effect works. These checks are
+        done
+        as any other, 1d20+rank+modifiers against the DC, unless they are done as an Opposed check against another
+        effect or a particular trait. </p>
+    <h3 data-heading="Effect Parameters" dir="auto">Effect Parameters</h3>
+    <p dir="auto">All effects have parameters that describe the action needed to use it, the range it works at, and
+        how
+        long it works.<br>
+        Actions are pretty self-explanatory and keep relatively close to pathfinder rules so I will not go over them
+    </p>
+    <h4 data-heading="Range" dir="auto">Range</h4>
+    <ul>
+        <li dir="auto"><strong>Personal</strong>: The effect works only on the user.</li>
+        <li dir="auto"><strong>Close</strong>: The effect can target anyone or anything the user is touching.
+            Touching
+            an unwilling subject requires an unarmed attack check against the subject’s Parry.</li>
+        <li dir="auto"><strong>Ranged</strong>: The effect works at a distance, limited by perception and path and
+            requiring a ranged attack check against the subject’s Dodge defense.
+            <ul>
+                <li dir="auto">short range (rank x 25 feet)</li>
+                <li dir="auto">medium range (rank x 50 feet) and a -2 circumstance penalty</li>
+                <li dir="auto">long range of (rank x 100 feet) and a -5 circumstance penalty</li>
+            </ul>
+        </li>
+        <li dir="auto"><strong>Perception</strong>: The effect works on any target you can perceive with an accurate
+            sense, without any need for an attack check.</li>
+        <li dir="auto"><strong>Rank</strong>: The effect’s range or area of effect is determined by its rank, as
+            given
+            in its description.</li>
+    </ul>
+    <h4 data-heading="Duration" dir="auto">Duration</h4>
+    <ul>
+        <li dir="auto"><strong>Instant</strong>: When used, the effect occurs and ends in the same turn, although
+            its
+            results may linger.</li>
+        <li dir="auto"><strong>Concentration</strong>: You can keep a concentration effect going by taking a
+            standard
+            action each round to do so. If you are incapable of taking the necessary action, or simply choose not
+            to,
+            the effect ends.</li>
+        <li dir="auto"><strong>Sustained</strong>: You can keep a sustained effect going by taking a free action
+            each
+            round to do so. If you are incapable of taking the necessary action, or simply choose not to, the effect
+            ends.</li>
+        <li dir="auto"><strong>Continuous</strong>: The effect lasts as long as you wish, without any action
+            required on
+            your part. Once active, it stays that way until you choose to deactivate it (a free action).</li>
+        <li dir="auto"><strong>Permanent</strong>: The effect is always active and cannot be deactivated, even if
+            you
+            want to. A permanent effect cannot be improved using extra effort.</li>
+    </ul>
+    <h2 data-heading="Modifiers" dir="auto">Modifiers</h2>
+    <p dir="auto">Modifiers are how you can change effects, either enhancing them with Extras or giving them limits
+        or
+        weaknesses with Flaws. Extras will increase to the cost of a power, either by adding to the per rank cost or
+        adding a flat additional cost. Flaws will decrease the cost of a power in much the same way.</p>
+    <h3 data-heading="Partial Modifiers" dir="auto">Partial Modifiers</h3>
+    <p dir="auto">Modifiers can be applied to only some ranks of an effect to fine tune the effect. for example you
+        could modify a damage 7 effect so that it’s first 4 ranks are AoE, this would mean on a direct hit the
+        target
+        would have to resist the full damage 7 but on a near miss they would still have to resist the area damage 4
+    </p>
+    <div class="effectList">
+        <h2 data-heading="Effect List" dir="auto">Effect List</h2>
+        <h3 data-heading="Attack" dir="auto">Attack</h3>
+        <ul>
+            <li dir="auto"><strong>Affliction</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Close</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+                <p>You can impose some debilitating condition or conditions on a target. <br>
+                    You set the conditions your Affliction causes at each degree when you acquire it and they may not be
+                    changed.</p>
+
+                <ul>
+                    <li>Success: No Effect</li>
+                    <li>
+                        1 Degree of Failure: The target is dazed, entranced, fatigued, hindered, impaired, or
+                        vulnerable.
+                    </li>
+                    <li>
+                        2 Degrees of Failure: The target is compelled, defenseless, disabled, exhausted, immobile,
+                        prone,
+                        or stunned.
+                    </li>
+                    <li>
+                        3 Degrees of Failure: The target is asleep, controlled, incapacitated, paralyzed, transformed or
+                        unaware
+                    </li>
+                </ul>
+                <p> The target of an Affliction makes a resistance check at the end of each of his turns to remove first
+                and second degree conditions. Third degree conditions require a minute of recovery time or outside
+                aid, such as the Treatment skill or Healing effect (DC 10 + rank).<br>
+
+                The exact nature and descriptors of the Affliction are up to you, chosen when you acquire the
+                effect, with the GM’s approval.
+                </p>
+            </li>
+            <li dir="auto"><strong>Damage</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Close</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Nullify</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Ranged</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Weaken</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Close</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 data-heading="Defense" dir="auto">Defense</h3>
+        <ul>
+            <li dir="auto"><strong>Deflect</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Ranged</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Immunity</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Protection</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Regeneration</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Immortality</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 data-heading="Control" dir="auto">Control</h3>
+        <ul>
+            <li dir="auto"><strong>Environment</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Rank</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1-2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Illusion</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Perception</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1-5 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Create</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Ranged</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Move Object</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Ranged</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Summon</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Close</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Transform</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Close</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2-5 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Luck Control</strong>
+                <ul>
+                    <li dir="auto">Action: Reaction</li>
+                    <li dir="auto">Range: Perception</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 3 per rank</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 data-heading="Movement" dir="auto">Movement</h3>
+        <ul>
+            <li dir="auto"><strong>Burrowing</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Leaping</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Speed</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Swimming</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Flight</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Movement</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Teleport</strong>
+                <ul>
+                    <li dir="auto">Action: Move</li>
+                    <li dir="auto">Range: Rank</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 data-heading="Sensory" dir="auto">Sensory</h3>
+        <ul>
+            <li dir="auto"><strong>Senses</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Remote Sensing</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Rank</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1-5 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Comprehend</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Concealment</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Mind Reading</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Perception</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Communication</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Rank</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 4 per rank</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 data-heading="General" dir="auto">General</h3>
+        <ul>
+            <li dir="auto"><strong>Elongation</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Extra Limbs</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Feature</strong>
+                <ul>
+                    <li dir="auto">Action: None</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Permanent</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Quickness</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 1 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Growth</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Healing</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Close</li>
+                    <li dir="auto">Duration: Instant</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Shrinking</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 2 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Insubstantial</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 5 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Morph</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 5 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Variable</strong>
+                <ul>
+                    <li dir="auto">Action: Standard</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: 7 per rank</li>
+                </ul>
+            </li>
+            <li dir="auto"><strong>Enhanced Trait</strong>
+                <ul>
+                    <li dir="auto">Action: Free</li>
+                    <li dir="auto">Range: Personal</li>
+                    <li dir="auto">Duration: Sustained</li>
+                    <li dir="auto">Cost: As base trait</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -11,6 +11,8 @@ const usedoffensepoints = document.getElementById("usedOffensePoints")
 const usedadvantagepoints = document.getElementById("UsedAdvantagePoints")
 const usedskillpoints = document.getElementById("UsedSkillPoints")
 
+
+
 //Abilities
 const strength = document.getElementById("strength")
 const agility = document.getElementById("agility")
@@ -75,6 +77,7 @@ const StealthTotal = document.getElementById('StealthTotal')
 const TechnologyTotal = document.getElementById('TechnologyTotal')
 const TreatmentTotal = document.getElementById('TreatmentTotal')
 const VehiclesTotal = document.getElementById('VehiclesTotal')
+
 // Variables?
 var abilitypoints = 0
 var powerpoints = powerlevel.value*15
@@ -111,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 powerlevel.addEventListener("input", updateAvailablePowerPoints);
 
 initbonus.addEventListener("input", fillMathSections);
+
+
 
 abilityscore.forEach(element =>{
     element.addEventListener("input", (event) => {
@@ -274,4 +279,4 @@ function updateSpentSkillPoints(){
     usedSkillPointsOutput.value = spentSkillPoints;
     console.log(spentSkillPoints);
 }
-// `${skillName}`Total = (+document.getElementById(${skillName}Display).value + +document.getElementById(`${skillName}'Rank).value + +document.getElementById(`${skillName}Enhance`).value)
+

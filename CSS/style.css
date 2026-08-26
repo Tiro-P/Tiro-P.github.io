@@ -3,6 +3,9 @@
     --body-bg: rgb(207, 197, 197);
     --input-color: gainsboro;
     --error-color: rgb(248, 53, 53);
+    --button-color: rgb(180, 206, 245);
+    --hover-shade: rgb(255, 255, 255);
+    --accent-color: rgb(87, 28, 34);
     /* ability colors */
     --str-color: rgba(231 62 79/.4);
     --agl-color: rgba(252 141 79/.4);
@@ -33,6 +36,96 @@ body {
     background-color: var(--body-bg);
 }
 
+/* #region Header & Menu*/
+#Header {
+    display: flex;
+    align-content: center;
+    border-bottom: 1px dashed;
+    border-top: 4px solid;
+    background-color: rgb(183, 164, 252);
+}
+
+.menu {
+    position: relative;
+    margin: 1.5vw;
+    width: 6vw;
+    aspect-ratio: 1 / 1;
+}
+
+#hamburger {
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 4vw;
+    cursor: pointer;
+    width: 6vw;
+    aspect-ratio: 1 / 1;
+}
+
+#menu {
+    max-height: 0%;
+    overflow: hidden;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+
+    a {
+        position: relative;
+        font-size: 4vw;
+        background-color: var(--button-color);
+        padding: .5vw;
+        width: 25vw;
+        border: 3px solid black;
+        border-top: none;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color .2s;
+    }
+
+    a:hover {
+        background-color: color-mix(in srgb, var(--button-color)80%, var(--hover-shade));
+    }
+
+    :first-child {
+        border-top: 3px solid black;
+    }
+}
+
+#menu.enabled {
+    /* top: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute; */
+    max-height: 100vh;
+    transition: max-height 1s linear 0s;
+    /* overflow: hidden; */
+
+    /* a{
+        position: relative;
+        font-size: 4vw;
+        background-color: var(--button-color);
+        padding: .5vw;
+        width: 25vw;
+        border: 3px solid black;
+        border-top: none;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color .2s;
+    }
+    
+    a:hover{
+        background-color: color-mix(in srgb, var(--button-color)80%,  var(--hover-shade));
+    }
+    :first-child{
+        border-top: 3px solid black;
+    } */
+}
+
+/* #endregion */
 /* #region collapsables */
 .active, .title:hover {
     background-color: rgb(227, 241, 252);
@@ -138,12 +231,10 @@ li:nth-child(even) {
 h2 {
     text-align: center;
     text-transform: capitalize;
-    font-size: 2em;
-    padding: 1em;
+    font-size: 3vw;
+    padding: 3vw;
     margin: auto;
-    border-bottom: 1px dashed;
-    border-top: 4px solid;
-    background-color: rgb(183, 164, 252);
+
 }
 
 h3 {
@@ -304,6 +395,7 @@ h3 {
 
 .error, .TDConflict, .TPConflict, .TDPConflict {
     color: var(--error-color);
+    cursor: pointer;
 }
 
 .error:hover+.errorflag {
@@ -576,18 +668,19 @@ h3 {
 #skillList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
-    .skillSplitter:first-child{
+
+    .skillSplitter:first-child {
         border-right: .1vw solid;
     }
 
-    .skillSplitter:last-child{
+    .skillSplitter:last-child {
         border-left: .1vw solid;
     }
 
     .skillSplitter {
         margin: 0;
         padding: .4vw;
+
         div:nth-child(even) {
             background-color: rgb(180, 171, 171);
         }
@@ -613,4 +706,143 @@ h3 {
             }
         }
     }
+}
+
+#PowersAndDevices {
+    border: 5px ridge black;
+    border-radius: 1em;
+    padding-bottom: .5vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+#powerCreator {
+    display: none;
+}
+
+#powerCreator.active {
+    display: block;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 1);
+    height: 100vh;
+    width: 90vw;
+    top: 0vh;
+    left: 5vw;
+    z-index: 1000;
+    color: white;
+    overflow-y: auto;
+
+    #powerCreatorHeader {
+        display: flex;
+        top: 0;
+        right: 0;
+        width: auto;
+        color: white;
+        border-bottom: 3px white solid;
+        background-color: var(--accent-color);
+
+        .sectionTitle {
+            width: 100%;
+            padding: 0%;
+            margin-left: 1vw;
+        }
+
+        #powerCreatorExitButton {
+            font-size: 3vw;
+            align-self: self-end;
+            color: white;
+            background-color: transparent;
+            border: none;
+            padding-right: 1vw;
+        }
+    }
+
+    #powerinfoWrapper {
+        display: flex;
+        gap: 5vw;
+        padding: 2vw;
+        border-bottom: white 3px solid;
+    }
+
+    .radiowrapper {
+        display: flex;
+        flex-direction: column;
+        align-content: baseline;
+        border-bottom: white dashed 1px;
+        padding: 1vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        align-items: center;
+
+        h4 {
+            font-size: 2vw;
+            text-align: start;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .radiogroup {
+            margin: 0vw 3vw;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            input {
+                display: none;
+            }
+
+            label {
+                font-size: 2vw;
+                padding: 0vw 1vw;
+                height: auto;
+                align-self: center;
+            }
+
+            input:checked+label {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #attackEffects, #defenseEffects, #controlEffects, #movementEffects, #sensoryEffects, #generalEffects {
+        display: none;
+    }
+
+
+}
+
+.effectDescription {
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .descriptionHeader {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 2vw;
+        align-items: center;
+        background-color: gray;
+        height: 4vw;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+
+        p {
+            padding: 0;
+            width: fit-content;
+        }
+    }
+
+    p {
+        width: 70%;
+
+    }
+
+    
 }
